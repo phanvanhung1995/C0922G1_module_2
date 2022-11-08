@@ -7,7 +7,6 @@ public class IndexMin {
     public static void main(String[] args) {
         int[] array = new int[5] ;
         int size = 5 ;
-        int min = array[0] ;
         Scanner sc = new Scanner(System.in) ;
 
 
@@ -18,6 +17,8 @@ public class IndexMin {
 
         System.out.print("mảng của bạn là :");
         System.out.println(Arrays.toString(array));
+
+        int min = array[0] ;
 
         for (int i =0 ; i< size; i++) {
             if (array[i] <= min) {
