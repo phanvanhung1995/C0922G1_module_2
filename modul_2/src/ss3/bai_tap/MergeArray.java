@@ -30,6 +30,7 @@ public class MergeArray {
             arr3[i+3] = arr2[i];
             count +=1 ;
         }
+        System.out.print("mảng sau khi ghép là : ");
         System.out.println(Arrays.toString(arr3));
 }
 }
