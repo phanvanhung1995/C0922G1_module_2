@@ -14,7 +14,6 @@ public class CountString {
             if (kyTu.charAt(0) == str.charAt(i)) {
                 count += 1;
             }
-
         }
         System.out.println("vậy số ký tự giống là : " + count);
     }
