@@ -1,7 +1,10 @@
 package ss4.bai_tap.phuog_trinh_bac_2;
 
 public class QuadraticEquation {
-    public double a ,b,c, delta;
+    private double a ;
+    private double b ;
+    private double c ;
+    private double delta ;
 
     public double getA() {
         return a;
