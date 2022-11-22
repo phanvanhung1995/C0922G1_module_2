@@ -31,7 +31,7 @@ public class PalindromeTest {
 
         System.out.println();
         System.out.print("Queue sau khi pust : ");
-
+/* loại bỏ phần tử khoảng trắng dư thừa*/
         for (int i = 0; i < word.length; i++) {
             if (!Objects.equals(word[i]," ")) {
                 arrQueue.offer(word[i]);
@@ -50,8 +50,8 @@ public class PalindromeTest {
         }
         System.out.print(popQueue);
         System.out.println();
-
-        if (popStack.equals(popQueue)) {
+/*so sánh 2 mảng ngược nhau để tìm ra đối xứng*/
+        if (popQueue.equals(popStack)) {
             System.out.println("chuỗi đối xứng");
         } else {
             System.out.println("chuỗi không đối xứng");

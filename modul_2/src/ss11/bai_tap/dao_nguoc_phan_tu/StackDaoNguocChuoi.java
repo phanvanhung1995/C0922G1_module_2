@@ -19,9 +19,11 @@ public class StackDaoNguocChuoi {
             }
         }
         int sizeWStack = wStack.size();
+        String mWord = "" ;
         System.out.println("chuỗi đảo ngược là ");
         for (int i = 0; i < sizeWStack; i++) {
-            System.out.print(wStack.pop() + " ");
+          mWord +=  wStack.pop() + " ";
         }
+        System.out.println(words);
     }
 }
