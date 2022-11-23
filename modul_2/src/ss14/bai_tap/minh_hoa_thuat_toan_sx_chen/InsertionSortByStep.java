@@ -12,7 +12,7 @@ public class InsertionSortByStep {
             int j = i - 1;
 
             while (j >= 0 && arr[j] > x) {
-                System.out.println("Swap " + arr[j+1 ] + " with " + arr[j]);
+                System.out.println("Swap " + arr[j ] + " with " + arr[j+1]);
                 arr[j + 1] = arr[j];
                 j--;
             }
