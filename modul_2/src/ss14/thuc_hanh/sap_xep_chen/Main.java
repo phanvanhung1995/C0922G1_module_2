@@ -21,7 +21,7 @@ public class Main {
 
         System.out.println("mảng sau khi sắp xếp : ");
 
-        sapXepChen.sort(arr);
+        sapXepChen.insertionSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
