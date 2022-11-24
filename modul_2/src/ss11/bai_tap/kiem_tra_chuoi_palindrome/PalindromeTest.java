@@ -13,27 +13,28 @@ public class PalindromeTest {
         Queue<String> arrQueue = new ArrayDeque<String>();
 
         System.out.print("Stack sau khi pust : ");
+        /*loại bỏ các phần tử dấu cách */
         for (int i = 0; i < word.length; i++) {
-            if (!Objects.equals(word[i]," ")) {
+            if (!Objects.equals(word[i], " ")) {
                 arrStack.push(word[i]);
             }
         }
         System.out.println(arrStack);
         System.out.print("Stack sau khi pop() : ");
         int sizeStack = arrStack.size();
-        String popStack = "" ;
-
+        String popStack = "";
+        /*lấy ra phần tử sau đó thêm vào 1 String khác*/
         for (int i = 0; i < sizeStack; i++) {
-            popStack += arrStack.pop() ;
+            popStack += arrStack.pop();
         }
         System.out.print(popStack);
 
 
         System.out.println();
         System.out.print("Queue sau khi pust : ");
-/* loại bỏ phần tử khoảng trắng dư thừa*/
+        /* loại bỏ phần tử khoảng trắng dư thừa*/
         for (int i = 0; i < word.length; i++) {
-            if (!Objects.equals(word[i]," ")) {
+            if (!Objects.equals(word[i], " ")) {
                 arrQueue.offer(word[i]);
             }
         }
@@ -42,15 +43,15 @@ public class PalindromeTest {
 
 
         int sizeQueue = arrQueue.size();
-        String popQueue = "" ;
+        String popQueue = "";
         System.out.print("Queue sau khi poll : ");
-
+        /*lấy ra phần tử sau đó thêm vào 1 String khác*/
         for (int i = 0; i < sizeQueue; i++) {
-            popQueue += arrQueue.poll() ;
+            popQueue += arrQueue.poll();
         }
         System.out.print(popQueue);
         System.out.println();
-/*so sánh 2 mảng ngược nhau để tìm ra đối xứng*/
+        /*so sánh 2 mảng ngược nhau để tìm ra đối xứng*/
         if (popQueue.equals(popStack)) {
             System.out.println("chuỗi đối xứng");
         } else {
