@@ -1,6 +1,6 @@
-package ss16.bai_tap.controller;
+package ss16.read_file_Object.controller;
 
-import ss16.bai_tap.model.Country;
+import ss16.read_file_Object.model.Country;
 
 import java.io.BufferedWriter;
 import java.io.File;

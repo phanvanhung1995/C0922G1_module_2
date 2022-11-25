@@ -1,9 +1,8 @@
-package ss16.bai_tap.view;
+package ss16.read_file_Object.view;
 
-import ss16.bai_tap.controller.ReadObject;
-import ss16.bai_tap.model.Country;
+import ss16.read_file_Object.controller.ReadObject;
+import ss16.read_file_Object.model.Country;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestReadObject {

@@ -1,4 +1,4 @@
-package ss16.bai_tap.model;
+package ss16.read_file_Object.model;
 
 public class Country {
     private int id ;
