@@ -20,7 +20,7 @@ public class TestProduct {
             System.out.println(" 1 - thêm sản phẩm : ");
             System.out.println(" 2 - hiển thị danh sách sản phẩm : ");
             System.out.println(" 3 - tìm kiếm sản phẩm theo id : ");
-            System.out.println("0 - thoát chương trình ");
+            System.out.println(" 0 - thoát chương trình ");
             System.out.println("chọn mục cần sử dụng dưới menu : ");
             luaChon = Integer.parseInt(scanner.nextLine());
             switch (luaChon) {
@@ -54,6 +54,8 @@ public class TestProduct {
                     System.out.println("nhập mã sản phầm : ");
                     int maSP = Integer.parseInt(scanner.nextLine());
                     productManagement.timKiemSP(maSP);
+                    break;
+                case 0:
                     break;
                 default:
                     System.out.println("lựa chọn không đúng trong menu, vui lòng chọn lai :");

@@ -30,11 +30,12 @@ public class CopyByte {
                     throw new RuntimeException(e);
                 }
             }
-            if (outputStream != null);
-            try {
-                outputStream.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            if (outputStream != null){
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
