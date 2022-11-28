@@ -10,7 +10,7 @@ import java.util.List;
 
 public class WriteObject {
     public void write(List<Country> list) {
-        File file = new File("src/ss16/bai_tap/data/country.csv");
+        File file = new File("src/ss16/read_file_Object/data/country.csv");
 
         try {
             FileWriter fileWriter = new FileWriter(file) ;

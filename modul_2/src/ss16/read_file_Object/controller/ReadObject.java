@@ -11,7 +11,7 @@ public class ReadObject {
     public List<Country> list() {
         List list = new ArrayList();
 
-        File file = new File("src/ss16/bai_tap/data/country.csv") ;
+        File file = new File("src/ss16/read_file_Object/data/country.csv") ;
         try {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
