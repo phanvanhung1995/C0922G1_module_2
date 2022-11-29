@@ -3,14 +3,13 @@ package ss17.bai_tap.quan_ly_san_pham.model;
 import java.io.Serializable;
 
 public class Product implements Serializable {
-    int maSP ;
-    String tenSP ;
-    String hangSX;
-    double giaSP;
+    private int maSP;
+    private String tenSP;
+    private String hangSX;
+    private double giaSP;
     String moTa;
 
     public Product() {
-
     }
 
     public Product(int maSP, String tenSP, String hangSX, double giaSP, String moTa) {
