@@ -7,7 +7,7 @@ public class Product implements Serializable {
     private String tenSP;
     private String hangSX;
     private double giaSP;
-    String moTa;
+   private String moTa;
 
     public Product() {
     }

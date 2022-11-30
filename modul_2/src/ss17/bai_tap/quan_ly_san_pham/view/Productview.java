@@ -51,11 +51,11 @@ public class Productview {
                     } catch (NumberFormatException e) {
                         throw new RuntimeException(e);
                     }
-                    productController.themSP(list);
+                    productController.addProduct(list);
                     break;
                 case 2:
                     List<Product> list1;
-                    list1 = productController.hienThiSP();
+                    list1 = productController.displayProduct();
                     for (Product p : list1) {
                         System.out.println(p);
                     }
@@ -63,7 +63,7 @@ public class Productview {
                 case 3:
                     System.out.println("nhập mã sản phầm : ");
                     int maSP = Integer.parseInt(scanner.nextLine());
-                    productController.timKiemSP(maSP);
+                    productController.seachProduct(maSP);
                     break;
                 case 0:
                     break;

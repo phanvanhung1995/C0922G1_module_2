@@ -8,19 +8,19 @@ import java.io.IOException;
 import java.util.List;
 
 public class ProductController {
-    IProductManagement productManagement = new ProductManagementImpl();
+   private final IProductManagement productManagement = new ProductManagementImpl();
 
-    public void themSP(List<Product> list) {
+    public void addProduct(List<Product> list) {
         try {
-            this.productManagement.themSP(list);
+            this.productManagement.addProduct(list);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public List<Product> hienThiSP() {
+    public List<Product> displayProduct() {
         try {
-           return this.productManagement.hienThiSP();
+           return this.productManagement.displayProduct();
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return null;
@@ -30,9 +30,9 @@ public class ProductController {
         }
     }
 
-    public void timKiemSP(int maSP) {
+    public void seachProduct(int maSP) {
         try {
-            this.productManagement.timKiemSP(maSP);
+            this.productManagement.seachProduct(maSP);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

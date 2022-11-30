@@ -11,7 +11,7 @@ public class ProductManagementImpl implements IProductManagement {
   private static File file = new File("src/ss17/bai_tap/quan_ly_san_pham/data/product.txt");
 
     //    thêm sản phẩm mới :
-    public void themSP(List<Product> list) throws IOException {
+    public void addProduct(List<Product> list) throws IOException {
         ObjectOutputStream objectOutputStream;
         FileOutputStream fileOutputStream;
 
@@ -23,7 +23,7 @@ public class ProductManagementImpl implements IProductManagement {
     }
 
     //    hiển thị sản phẩm  :
-    public List<Product> hienThiSP() {
+    public List<Product> displayProduct() {
         List<Product> list = new ArrayList<>();
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
@@ -48,9 +48,9 @@ public class ProductManagementImpl implements IProductManagement {
         return list;
     }
 
-    public void timKiemSP(int maSP) throws IOException, ClassNotFoundException {
+    public void seachProduct(int maSP) throws IOException, ClassNotFoundException {
         String result = "";
-        List<Product> list = hienThiSP();
+        List<Product> list = displayProduct();
         for (Product p : list) {
             if (maSP == p.getMaSP()) {
                 result = "sản phẩm cần tìm là  : " + p.toString();
