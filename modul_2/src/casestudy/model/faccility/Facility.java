@@ -2,16 +2,16 @@ package casestudy.model.faccility;
 
 public abstract class Facility {
     private String nameService;
-    private int area;
-    private double price;
-    private int numberOfPeopleMax;
-    private int typeService;
+    private String area;
+    private String price;
+    private String numberOfPeopleMax;
+    private String typeService;
 
-    public Facility(String nameService, int area, double price, int numberofpeoplemax, int typeService) {
+    public Facility(String nameService, String area, String price, String numberOfPeopleMax, String typeService) {
         this.nameService = nameService;
         this.area = area;
         this.price = price;
-        this.numberOfPeopleMax = numberofpeoplemax;
+        this.numberOfPeopleMax = numberOfPeopleMax;
         this.typeService = typeService;
     }
 
@@ -23,35 +23,35 @@ public abstract class Facility {
         this.nameService = nameService;
     }
 
-    public int getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(String area) {
         this.area = area;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public int getNumberOfPeopleMax() {
+    public String getNumberOfPeopleMax() {
         return numberOfPeopleMax;
     }
 
-    public void setNumberOfPeopleMax(int numberOfPeopleMax) {
+    public void setNumberOfPeopleMax(String numberOfPeopleMax) {
         this.numberOfPeopleMax = numberOfPeopleMax;
     }
 
-    public int getTypeService() {
+    public String getTypeService() {
         return typeService;
     }
 
-    public void setTypeService(int typeService) {
+    public void setTypeService(String typeService) {
         this.typeService = typeService;
     }
 
@@ -59,10 +59,10 @@ public abstract class Facility {
     public String toString() {
         return "Facility{" +
                 "nameService='" + nameService + '\'' +
-                ", area=" + area +
-                ", price=" + price +
-                ", numberOfPeopleMax=" + numberOfPeopleMax +
-                ", typeService=" + typeService +
+                ", area='" + area + '\'' +
+                ", price='" + price + '\'' +
+                ", numberOfPeopleMax='" + numberOfPeopleMax + '\'' +
+                ", typeService='" + typeService + '\'' +
                 '}';
     }
 }

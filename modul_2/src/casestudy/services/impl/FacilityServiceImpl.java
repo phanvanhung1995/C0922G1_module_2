@@ -1,5 +1,6 @@
 package casestudy.services.impl;
 
+import casestudy.model.faccility.Facility;
 import casestudy.services.IFacilityService;
 
 public class FacilityServiceImpl implements IFacilityService {
@@ -9,22 +10,10 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public void add() {
+    public void newadd(Facility f , int numberOfUser) {
+
 
     }
 
-    @Override
-    public void edit() {
 
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void display() {
-
-    }
 }

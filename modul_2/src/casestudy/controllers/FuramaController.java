@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FuramaController {
 
-    public void displayMainMenu() {
+    public static void displayMainMenu() {
 
         System.out.println("------Menu------");
         System.out.println("1.\tEmployee Management\n" + "2.\tCustomer Management\n"

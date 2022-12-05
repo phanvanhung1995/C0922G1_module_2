@@ -4,12 +4,12 @@ import javax.xml.crypto.Data;
 import java.util.Date;
 
 public abstract class People {
-    private String name ;
-    private String dateOfBirth ;
+    private String name;
+    private String dateOfBirth;
     private String gender;
-    private String id ;
-    private String phoneNumber ;
-    private String Email ;
+    private String id;
+    private String phoneNumber;
+    private String Email;
 
     public People(String name, String dateOfBirth, String gender, String id, String phoneNumber, String email) {
         this.name = name;
@@ -71,12 +71,12 @@ public abstract class People {
     @Override
     public String toString() {
         return
-                "name= " + name + "," +
-                " dateOfBirth= " + dateOfBirth + ","+
-                " gender= " + gender + "," +
-                " id= " + id + "," +
-                " phoneNumber= " + phoneNumber + "," +
-                " Email= " + Email  ;
+                name + "," +
+                        dateOfBirth + "," +
+                        gender + "," +
+                        id + "," +
+                        phoneNumber + "," +
+                        Email;
 
     }
 }

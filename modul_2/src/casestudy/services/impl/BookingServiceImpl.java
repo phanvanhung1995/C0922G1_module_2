@@ -4,22 +4,12 @@ import casestudy.services.IBookingService;
 
 public class BookingServiceImpl implements IBookingService {
     @Override
-    public void add() {
+    public void newadd() {
 
     }
 
     @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void display() {
+    public void newDisplay() {
 
     }
 }

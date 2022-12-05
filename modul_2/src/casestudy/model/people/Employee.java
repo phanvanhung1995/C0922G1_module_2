@@ -9,12 +9,10 @@ public class Employee extends People{
     private String rank ;
     private String salary ;
 
-    public Employee(String name, String dateOfBirth, String gender, String id, String phoneNumber, String email) {
-        super(name, dateOfBirth, gender, id, phoneNumber, email);
-    }
+
 
     public Employee(String name, String dateOfBirth, String gender, String id, String phoneNumber,
-                    String email,String idEmployee, String level, String rank, String salary) {
+                    String email, String idEmployee, String level, String rank, String salary) {
         super(name, dateOfBirth, gender, id, phoneNumber, email);
         this.idEmployee = idEmployee;
         this.level = level;
@@ -56,10 +54,10 @@ public class Employee extends People{
 
     @Override
     public String toString() {
-        return "Employee{"+ "," +super.toString() +
-                "idEmployee= " + idEmployee + "," +
-                " level= " + level + "," +
-                " rank= " + rank + "," +
-                " salary= " + salary + "," ;
+        return  super.toString() + ","+
+                 idEmployee + "," +
+                 level + "," +
+               rank + "," +
+                 salary ;
     }
 }

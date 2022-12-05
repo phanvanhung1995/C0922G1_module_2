@@ -5,9 +5,21 @@ import casestudy.model.faccility.Facility;
 public class Villa extends Facility {
 
     private String standardRoom;
-    private double areaPool;
-    private int floor;
+    private String areaPool;
+    private String floor;
 
+
+    public Villa(String nameService, String area, String price, String numberOfPeopleMax, String typeService) {
+        super(nameService, area, price, numberOfPeopleMax, typeService);
+    }
+
+    public Villa(String nameService, String area, String price, String numberOfPeopleMax, String typeService,
+                 String standardRoom, String areaPool, String floor) {
+        super(nameService, area, price, numberOfPeopleMax, typeService);
+        this.standardRoom = standardRoom;
+        this.areaPool = areaPool;
+        this.floor = floor;
+    }
 
     public String getStandardRoom() {
         return standardRoom;
@@ -17,40 +29,28 @@ public class Villa extends Facility {
         this.standardRoom = standardRoom;
     }
 
-    public double getAreaPool() {
+    public String getAreaPool() {
         return areaPool;
     }
 
-    public void setAreaPool(double areaPool) {
+    public void setAreaPool(String areaPool) {
         this.areaPool = areaPool;
     }
 
-    public int getFloor() {
+    public String getFloor() {
         return floor;
     }
 
-    public void setFloor(int floor) {
+    public void setFloor(String floor) {
         this.floor = floor;
-    }
-
-    public Villa(String nameService, int area, double price, int numberofpeoplemax,
-                 int typeService, String standardRoom, double areaPool, int floor) {
-        super(nameService, area, price, numberofpeoplemax, typeService);
-        this.standardRoom = standardRoom;
-        this.areaPool = areaPool;
-        this.floor = floor;
-    }
-
-    public Villa(String nameService, int area, double price, int numberofpeoplemax, int typeService) {
-        super(nameService, area, price, numberofpeoplemax, typeService);
     }
 
     @Override
     public String toString() {
         return "Villa{" +
                 "standardRoom='" + standardRoom + '\'' +
-                ", areaPool=" + areaPool +
-                ", floor=" + floor +
+                ", areaPool='" + areaPool + '\'' +
+                ", floor='" + floor + '\'' +
                 "} " + super.toString();
     }
 }

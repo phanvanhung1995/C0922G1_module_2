@@ -1,4 +1,4 @@
-package casestudy.services;
+package casestudy.utils;
 
 import casestudy.model.people.Employee;
 import casestudy.views.EmployeeInput;
@@ -7,8 +7,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WriteAndReaderFileEmployee {
-    private File employeefile = new File("src/casestudy/data/employee.csv");
+public class WriteAndReadFileEmployee {
+
+    private File employeefile = new File("src/casestudy/data/employeeDATA.csv");
 
     public void writeEmployee() throws IOException {
 
@@ -19,10 +20,9 @@ public class WriteAndReaderFileEmployee {
         bufferedWriter.write(employeelist.get(0).toString());
         bufferedWriter.newLine();
         bufferedWriter.close();
-
     }
 
-    public void readerEmployee() throws IOException {
+    public List<Employee> readerEmployee() throws IOException {
         List<Employee> employeeList = new ArrayList<>();
         BufferedReader bufferedReader = new BufferedReader(new FileReader(employeefile));
         String line = "";
@@ -47,11 +47,12 @@ public class WriteAndReaderFileEmployee {
             Employee employee = new Employee(name, dateOfBirth, gender, id, phoneNumber, Email, idEmployee, level, rank, salary);
             employeeList.add(employee);
         }
-        System.out.println(employeeList);
+        return employeeList;
     }
 
     public static void main(String[] args) throws IOException {
-        WriteAndReaderFileEmployee w = new WriteAndReaderFileEmployee();
-        w.readerEmployee();
+        WriteAndReadFileEmployee w = new WriteAndReadFileEmployee();
+        w.writeEmployee();
     }
+
 }

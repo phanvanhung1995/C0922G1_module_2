@@ -17,6 +17,12 @@ public class FacilityController {
 
         switch (optionFacility) {
             case 1:
+                System.out.println("----Menu----");
+                System.out.println("1.\tAdd New Villa\n" +
+                        "2.\tAdd New Room\n" +
+                        "3.\tBack to menu\n");
+                System.out.println("mời bạn chọn dịch vụ : ");
+                int optionNew = scanner.nextInt();
             case 2:
             case 3:
             case 4:
