@@ -1,5 +1,6 @@
 package casestudy.views;
 
+import casestudy.libsx.Regex;
 import casestudy.model.people.Customer;
 import casestudy.model.people.Employee;
 
@@ -8,6 +9,7 @@ import java.util.Scanner;
 public class CustomerInput {
 
     public static Customer inputCustomer() {
+        String regexDateOfBirth = "^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("nhập mã khách hàng : ");
@@ -15,7 +17,7 @@ public class CustomerInput {
         System.out.println("nhập tên khách hàng : ");
         String name = scanner.nextLine();
         System.out.println("nhập ngày sinh : ");
-        String dateOfBirth = scanner.nextLine();
+        String dateOfBirth = Regex.regexAge(scanner.nextLine(),regexDateOfBirth);
         System.out.println("nhập giới tính : ");
         String gender = scanner.nextLine();
         System.out.println("nhập số căn cước công dân : ");

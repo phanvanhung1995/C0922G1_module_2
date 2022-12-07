@@ -44,10 +44,16 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 break;
             }
         }
+        try {
+            w.writeEmployee();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @Override
     public void deleteall(String idEmployee) {
+        Employee deleteEmployee = null;
         List<Employee> employeeList = new ArrayList<>();
         try {
             employeeList = w.readerEmployee();
@@ -56,8 +62,19 @@ public class EmployeeServiceImpl implements IEmployeeService {
         }
 
         for (Employee e : employeeList) {
-            if (e.getId() == idEmployee) {
-                employeeList.remove(e);
+            if (e.getIdEmployee() == idEmployee) {
+                deleteEmployee = e ;
+                break;
+            }
+            if (deleteEmployee== null) {
+                System.out.println("không có nhân viên cần xóa : ");
+            }
+            employeeList.remove(deleteEmployee);
+
+            try {
+                w.writeEmployee();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
         }
     }

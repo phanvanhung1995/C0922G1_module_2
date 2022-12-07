@@ -1,23 +1,20 @@
 package casestudy.model.people;
 
-import javax.xml.crypto.Data;
-import java.util.Date;
-
 public abstract class People {
     private String name;
     private String dateOfBirth;
     private String gender;
     private String id;
     private String phoneNumber;
-    private String Email;
+    private String email;
 
-    public People(String name, String dateOfBirth, String gender, String id, String phoneNumber, String email) {
+    protected People(String name, String dateOfBirth, String gender, String id, String phoneNumber, String email) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.id = id;
         this.phoneNumber = phoneNumber;
-        Email = email;
+        this.email = email;
     }
 
     public String getName() {
@@ -61,11 +58,11 @@ public abstract class People {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     @Override
@@ -76,7 +73,19 @@ public abstract class People {
                         gender + "," +
                         id + "," +
                         phoneNumber + "," +
-                        Email;
+                        email;
 
+    }
+
+
+    public String toStringDisplay() {
+        return
+                "name='" + name + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender='" + gender + '\'' +
+                ", id='" + id + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

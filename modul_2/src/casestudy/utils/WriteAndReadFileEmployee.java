@@ -17,8 +17,10 @@ public class WriteAndReadFileEmployee {
         employeelist.add(EmployeeInput.inputEmployee());
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(employeefile));
-        bufferedWriter.write(employeelist.get(0).toString());
-        bufferedWriter.newLine();
+        for (Employee e : employeelist) {
+            bufferedWriter.write(e.toString());
+            bufferedWriter.newLine();
+        }
         bufferedWriter.close();
     }
 
@@ -46,13 +48,14 @@ public class WriteAndReadFileEmployee {
 
             Employee employee = new Employee(name, dateOfBirth, gender, id, phoneNumber, Email, idEmployee, level, rank, salary);
             employeeList.add(employee);
+
+            System.out.println(employee.toStringDisplay());
         }
         return employeeList;
     }
 
     public static void main(String[] args) throws IOException {
         WriteAndReadFileEmployee w = new WriteAndReadFileEmployee();
-        w.writeEmployee();
+        w.readerEmployee();
     }
-
 }

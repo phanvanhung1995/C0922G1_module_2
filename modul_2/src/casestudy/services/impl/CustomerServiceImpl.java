@@ -11,6 +11,7 @@ import java.util.List;
 public class CustomerServiceImpl implements ICustomerService {
 
     WriteAndReadFileCustomer w = new WriteAndReadFileCustomer();
+
     @Override
     public void newadd() {
         try {
@@ -40,6 +41,11 @@ public class CustomerServiceImpl implements ICustomerService {
                 customer1.setAddress(customer.getAddress());
                 break;
             }
+        }
+        try {
+            w.writeCustomer();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

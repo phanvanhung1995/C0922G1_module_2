@@ -60,4 +60,13 @@ public class Employee extends People{
                rank + "," +
                  salary ;
     }
+
+    public String toStringDisplay() {
+        return "Employee{" +  super.toStringDisplay() +
+                "idEmployee='" + idEmployee + '\'' +
+                ", level='" + level + '\'' +
+                ", rank='" + rank + '\'' +
+                ", salary='" + salary + '\'' +
+                "} " ;
+    }
 }
