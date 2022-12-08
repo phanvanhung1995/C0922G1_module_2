@@ -21,10 +21,10 @@ public class EmployeeController {
             optionEmployee = Integer.parseInt(scanner.nextLine());
             switch (optionEmployee) {
                 case 1:
-                    emp.newDisplay();
+                    emp.displayAll();
                     break;
                 case 2:
-                    emp.newadd();
+                    emp.addNew();
                     break;
                 case 3:
                     System.out.println("nhập mã nhân viên muốn xóa : ");

@@ -27,10 +27,10 @@ public class CustomerController {
 
             switch (optionCustomer) {
                 case 1:
-                    customerService.newDisplay();
+                    customerService.displayAll();
                     break;
                 case 2:
-                    customerService.newadd();
+                    customerService.addNew();
                     break;
                 case 3:
                     System.out.println("nhập id cần sửa : ");
@@ -58,6 +58,7 @@ public class CustomerController {
                     break;
                 case 4:
                     FuramaController.displayMainMenu();
+                    break;
                 default:
                     System.out.println("Lựa chọn không có trong menu, vui lòng chọn lại : ");
             }

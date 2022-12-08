@@ -26,9 +26,9 @@ public class CustomerInput {
         String phoneNumber = scanner.nextLine();
         System.out.println("nhập email  : ");
         String email = scanner.nextLine();
-        System.out.println("nhập trình độ : ");
+        System.out.println("nhập loại khách hàng : ");
         String rankCustomer = scanner.nextLine();
-        System.out.println("nhập vị trí  : ");
+        System.out.println("nhập địa chỉ khách hàng : ");
         String address = scanner.nextLine();
 
         return new Customer(idCustomer,name,dateOfBirth,gender,id,phoneNumber,email,rankCustomer,address);

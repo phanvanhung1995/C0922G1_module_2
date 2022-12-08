@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class Regex {
    static Scanner scanner = new Scanner(System.in);
-    //    kiểm tra nhập mã dịch vụ :  :
+
     public static String regexFacility(String id, String regex, String err) {
 
         boolean check = true;
@@ -29,7 +29,6 @@ public class Regex {
 
     public static String regexAge(String temp, String regex) {
         boolean check = true;
-        String result = null;
         while (check) {
             try {
                 if (Pattern.matches(regex, temp)) {

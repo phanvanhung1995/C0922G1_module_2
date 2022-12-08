@@ -14,7 +14,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     WriteAndReadFileEmployee w = new WriteAndReadFileEmployee();
 
     @Override
-    public void newadd() {
+    public void addNew() {
         try {
             w.writeEmployee();
         } catch (IOException e) {
@@ -80,7 +80,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public void newDisplay() {
+    public void displayAll() {
         try {
             w.readerEmployee();
         } catch (IOException e) {

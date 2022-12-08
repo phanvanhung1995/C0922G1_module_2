@@ -11,7 +11,7 @@ public class VillaInput {
         Scanner scanner = new Scanner(System.in);
         String regexIdVilla = "^SVVL-[0-9]{4}$";
         String err = "nhập sai mời nhập lại : ";
-        String regexNameService = "^[A-Z]{1}$" ;
+        String regexNameService = "^[A-Z]{1}[a-zA-Z0-9]{1,}$" ;
         String regexArea = "^0*[3-9]{1,}|[1-2][0-9]{2,}$";
         String regexPrice = "^[0-9]{1,}.[0-9]{1,}|[0-9]{1,}$" ;
         String regexNumberOfPeopleMax = "^[0-1]?[0-9]$$" ;
@@ -23,7 +23,7 @@ public class VillaInput {
         System.out.println("nhập tên dịch vụ : ");
         String nameService = Regex.regexFacility(scanner.nextLine(),regexNameService, err);
         System.out.println("nhập diện tích villa : ");
-        String area =Regex.regexFacility(scanner.nextLine(),regexArea, err);
+        String area = scanner.nextLine();
         System.out.println("nhập chi phí thuê : ");
         String price = Regex.regexFacility(scanner.nextLine(),regexPrice, err);
         System.out.println("nhập số người thuê tối đa : ");
@@ -33,7 +33,7 @@ public class VillaInput {
         System.out.println("nhập tiêu chuẩn phòng : ");
         String standardRoom = Regex.regexFacility(scanner.nextLine(),regexNameService, err);
         System.out.println("nhập diện tích hồ bơi : ");
-        String areaPool = scanner.nextLine();
+        String areaPool = Regex.regexFacility(scanner.nextLine(),regexArea, err);
         System.out.println("nhập số tầng : ");
         String floor =  Regex.regexFacility(scanner.nextLine(),regexFloor, err);
         return new Villa(idVilla, nameService, area, price, numberOfPeopleMax, typeService, standardRoom,

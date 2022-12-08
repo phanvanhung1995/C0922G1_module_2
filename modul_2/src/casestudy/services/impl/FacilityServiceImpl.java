@@ -1,7 +1,6 @@
 package casestudy.services.impl;
 
 import casestudy.model.faccility.Facility;
-import casestudy.model.faccility.Villa;
 import casestudy.services.IFacilityService;
 import casestudy.utils.WriteAndReadFileVilla;
 
@@ -32,6 +31,7 @@ public class FacilityServiceImpl implements IFacilityService {
     public void displayFacilityRoom(File file) throws IOException {
         writeAndReadFileVilla.readFile(file) ;
     }
+
 
 
 }

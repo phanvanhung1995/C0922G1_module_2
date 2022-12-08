@@ -13,7 +13,7 @@ public class CustomerServiceImpl implements ICustomerService {
     WriteAndReadFileCustomer w = new WriteAndReadFileCustomer();
 
     @Override
-    public void newadd() {
+    public void addNew() {
         try {
             w.writeCustomer();
         } catch (IOException e) {
@@ -51,7 +51,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
 
     @Override
-    public void newDisplay() {
+    public void displayAll() {
         try {
             w.readCustomer();
         } catch (IOException e) {
