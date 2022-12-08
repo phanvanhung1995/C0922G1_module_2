@@ -29,7 +29,7 @@ public class EmployeeController {
                 case 3:
                     System.out.println("nhập mã nhân viên muốn xóa : ");
                     String idEmployee = scanner.nextLine();
-                    emp.deleteall(idEmployee);
+                    emp.deleteAll(idEmployee);
                     break;
                 case 4:
                     System.out.println("nhập id cần sửa : ");
@@ -55,7 +55,7 @@ public class EmployeeController {
 
                     Employee newemployee = new Employee(newName, newDateOfBirth, newGender, newid, newPhoneNumber, newEmail,
                             idEdit, newLever, newRank, newSalary);
-                    emp.newedit(newemployee);
+                    emp.editNew(newemployee);
                     break;
                 case 5:
                     FuramaController.displayMainMenu();

@@ -25,7 +25,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 
     @Override
-    public void newedit(Employee employee) {
+    public void editNew(Employee employee) {
         List<Employee> employeeList;
         try {
             employeeList = w.readerEmployee();
@@ -54,7 +54,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public void deleteall(String idEmployee) {
+    public void deleteAll(String idEmployee) {
         Employee deleteEmployee = null;
         List<Employee> employeeList = new ArrayList<>();
         try {
