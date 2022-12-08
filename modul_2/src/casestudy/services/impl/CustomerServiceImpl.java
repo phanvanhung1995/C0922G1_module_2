@@ -13,9 +13,10 @@ public class CustomerServiceImpl implements ICustomerService {
     WriteAndReadFileCustomer w = new WriteAndReadFileCustomer();
 
     @Override
-    public void addNew() {
+    public void addNew() throws IOException {
+        List<Customer> customerList = w.readCustomer();
         try {
-            w.writeCustomer();
+            w.writeCustomer(customerList);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -43,17 +44,18 @@ public class CustomerServiceImpl implements ICustomerService {
             }
         }
         try {
-            w.writeCustomer();
+            w.writeCustomer(customerList);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-
-    @Override
     public void displayAll() {
         try {
-            w.readCustomer();
+            List<Customer> list =  w.readCustomer();
+            for (Customer c : list) {
+                System.out.println(c.toStringDisplay());
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

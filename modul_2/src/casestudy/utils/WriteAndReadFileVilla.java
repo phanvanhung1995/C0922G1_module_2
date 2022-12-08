@@ -8,19 +8,23 @@ import java.io.*;
 import java.util.*;
 
 public class WriteAndReadFileVilla {
-    File file = new File("src/casestudy/data/villaDATA.csv");
+    private final File file = new File("src/casestudy/data/villaDATA.csv");
 
-    public void writeFIle(Facility f) throws IOException {
+    public void writeFIle(Map<Villa, Integer> mapVilla) throws IOException {
+
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-        bufferedWriter.write(String.valueOf(f));
-        bufferedWriter.newLine();
+        Set<Villa> setVilla = mapVilla.keySet();
+        for (Villa f : setVilla) {
+            bufferedWriter.write(f.toString() + "," + mapVilla.get(f));
+            bufferedWriter.newLine();
+        }
         bufferedWriter.close();
     }
 
-    public Map<Villa, Integer> readFile(File f) throws IOException {
+    public Map<Villa, Integer> readFile() throws IOException {
 
         Map<Villa, Integer> villaMap = new LinkedHashMap<>();
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(f));
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String line = "";
 
         while (true) {
@@ -41,12 +45,12 @@ public class WriteAndReadFileVilla {
             String areaPool = str[7];
             String floor = str[8];
 
-            Villa villa = new Villa(idVilla,nameService, area, price, numberOfPeopleMax, typeService,
+            Villa villa = new Villa(idVilla, nameService, area, price, numberOfPeopleMax, typeService,
                     standardRoom, areaPool, floor);
-            int count = 0 ;
+            int count = 0;
             villaMap.put(villa, count);
-            System.out.println(villa.toStringDisplay());
         }
         return villaMap;
     }
+
 }

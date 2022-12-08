@@ -9,9 +9,9 @@ public class RoomInput {
     public static Room inputRoom() {
         Scanner scanner = new Scanner(System.in);
 
-        String regexIdRoom = "^SVVL-[0-9]{4}$";
+        String regexIdRoom = "^SVRO-[0-9]{4}$";
         String err = "nhập sai mời nhập lại : ";
-        String regexNameService = "^[A-Z]{1}$" ;
+        String regexNameService = "^[A-Z]{1}[a-zA-Z0-9]{1,}$" ;
         String regexArea = "^0*[3-9]{1,}|[1-2][0-9]{2,}$";
         String regexPrice = "^[0-9]{1,}.[0-9]{1,}|[0-9]{1,}$" ;
         String regexNumberOfPeopleMax = "^[0-1]?[0-9]$$" ;

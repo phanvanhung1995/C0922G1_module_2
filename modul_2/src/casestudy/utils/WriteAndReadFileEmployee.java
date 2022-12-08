@@ -11,13 +11,12 @@ public class WriteAndReadFileEmployee {
 
     private File employeefile = new File("src/casestudy/data/employeeDATA.csv");
 
-    public void writeEmployee() throws IOException {
+    public void writeEmployee(List<Employee> employeeList) throws IOException {
 
-        List<Employee> employeelist = new ArrayList<>();
-        employeelist.add(EmployeeInput.inputEmployee());
+        employeeList.add(EmployeeInput.inputEmployee());
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(employeefile));
-        for (Employee e : employeelist) {
+        for (Employee e : employeeList) {
             bufferedWriter.write(e.toString());
             bufferedWriter.newLine();
         }
@@ -49,13 +48,7 @@ public class WriteAndReadFileEmployee {
             Employee employee = new Employee(name, dateOfBirth, gender, id, phoneNumber, Email, idEmployee, level, rank, salary);
             employeeList.add(employee);
 
-            System.out.println(employee.toStringDisplay());
         }
         return employeeList;
-    }
-
-    public static void main(String[] args) throws IOException {
-        WriteAndReadFileEmployee w = new WriteAndReadFileEmployee();
-        w.readerEmployee();
     }
 }

@@ -11,15 +11,17 @@ import java.util.List;
 public class WriteAndReadFileCustomer {
     File fileCustomer = new File("src/casestudy/data/customerDATA.csv");
 
-    public void writeCustomer() throws IOException {
+    public void writeCustomer(List<Customer> customerList) throws IOException {
 
-//        List<Customer> customerList = new ArrayList<>();
-//        customerList.add(CustomerInput.inputCustomer());
+
         Customer customer = CustomerInput.inputCustomer();
+        customerList.add(customer);
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileCustomer));
-        bufferedWriter.write(String.valueOf(customer));
-        bufferedWriter.newLine();
+        for (Customer c : customerList) {
+            bufferedWriter.write(c.toString());
+            bufferedWriter.newLine();
+        }
         bufferedWriter.close();
     }
 
@@ -45,7 +47,6 @@ public class WriteAndReadFileCustomer {
             String address = str[8];
             Customer customer = new Customer(name,dateOfBirth,gender,id,phoneNumber,Email,idEmployee,rankCustomer,address);
             customerlist.add(customer);
-            System.out.println(customerlist);
         }
         return customerlist;
     }

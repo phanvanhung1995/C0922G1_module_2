@@ -54,7 +54,7 @@ public class Employee extends People{
 
     @Override
     public String toString() {
-        return  super.toString() + ","+
+        return super.toString() + ","+
                  idEmployee + "," +
                  level + "," +
                rank + "," +

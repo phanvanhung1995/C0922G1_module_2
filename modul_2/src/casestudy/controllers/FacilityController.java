@@ -1,5 +1,6 @@
 package casestudy.controllers;
 
+import casestudy.model.faccility.Facility;
 import casestudy.model.faccility.Room;
 import casestudy.model.faccility.Villa;
 import casestudy.services.impl.FacilityServiceImpl;
@@ -9,12 +10,14 @@ import casestudy.views.VillaInput;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class FacilityController {
     public static void displayFacility() throws IOException {
 
-        int optionFacility ;
+        int optionFacility;
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         do {
             System.out.println("-----MenuFacility -----");
@@ -30,7 +33,7 @@ public class FacilityController {
 
             switch (optionFacility) {
                 case 1:
-                    int optionDisplay ;
+                    int optionDisplay;
 
                     do {
                         System.out.println("----Menu----");
@@ -41,12 +44,10 @@ public class FacilityController {
                         optionDisplay = scanner.nextInt();
                         switch (optionDisplay) {
                             case 1:
-                                File fileVilla = new File("src/casestudy/data/villaDATA.csv");
-                                facilityService.displayFacilityVilla(fileVilla);
+                                facilityService.displayFacilityVilla();
                                 break;
                             case 2:
-                                File fileRoom = new File("src/casestudy/data/villaDATA.csv");
-                                facilityService.displayFacilityRoom(fileRoom);
+                                facilityService.displayFacilityRoom();
                                 break;
                             case 3:
                                 FacilityController.displayFacility();
@@ -54,7 +55,7 @@ public class FacilityController {
                             default:
                                 System.out.println("không có trong menu, vui lòng chọn lại : ");
                         }
-                    }while (optionDisplay != 0);
+                    } while (optionDisplay != 0);
                 case 2:
                     int optionAdd;
                     do {
@@ -70,18 +71,14 @@ public class FacilityController {
                         WriteAndReadFileVilla w = new WriteAndReadFileVilla();
 
 
-
                         switch (optionAdd) {
                             case 1:
                                 Villa newVilla = VillaInput.inputNewVilla();
                                 facilityService.addFacility(newVilla, countOfVilla);
-                                w.writeFIle(newVilla);
                                 break;
                             case 2:
                                 Room newRoom = RoomInput.inputRoom();
-
                                 facilityService.addFacility(newRoom, countOfRoom);
-                                w.writeFIle(newRoom);
                                 break;
                             case 3:
                                 FacilityController.displayFacility();
@@ -89,7 +86,7 @@ public class FacilityController {
                             default:
                                 System.out.println("không có trong menu, vui lòng chọn lại : ");
                         }
-                    }while (optionAdd != 0 );
+                    } while (optionAdd != 0);
                 case 3:
                 case 4:
                     FuramaController.displayMainMenu();
@@ -97,6 +94,6 @@ public class FacilityController {
                 default:
                     System.out.println("Lựa chọn không có trong menu, vui lòng chọn lại : ");
             }
-        }while (optionFacility != 0);
+        } while (optionFacility != 0);
     }
 }

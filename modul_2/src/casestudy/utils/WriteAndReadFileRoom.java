@@ -1,25 +1,27 @@
 package casestudy.utils;
 
 import casestudy.model.faccility.Room;
+import casestudy.model.faccility.Villa;
 import casestudy.views.RoomInput;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class WriteAndReadFileRoom {
 
     File file = new File("src/casestudy/data/roomDATA.csv");
 
-    public void writeFIle() throws IOException {
-        Room roomInput = RoomInput.inputRoom();
+    public void writeFIle(Map<Room, Integer> mapRoom) throws IOException {
+
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-        bufferedWriter.write(String.valueOf(roomInput));
-        bufferedWriter.newLine();
+        Set<Room> setRoom = mapRoom.keySet();
+        for (Room r : setRoom) {
+            bufferedWriter.write(r.toString() + "," + mapRoom.get(r));
+            bufferedWriter.newLine();
+        }
         bufferedWriter.close();
     }
+
 
     public Map<Room,Integer> readFile() throws IOException {
        Map<Room,Integer> mapRoom = new LinkedHashMap<>();
@@ -44,14 +46,7 @@ public class WriteAndReadFileRoom {
             Room room = new Room(idRoom,nameService, area, price, numberOfPeopleMax, typeService, freeService);
             int count = 0 ;
             mapRoom.put(room, count);
-            System.out.println(room.toStringDisplay());
         }
         return mapRoom;
-    }
-
-    public static void main(String[] args) throws IOException {
-        WriteAndReadFileRoom w = new WriteAndReadFileRoom();
-
-        w.readFile();
     }
 }

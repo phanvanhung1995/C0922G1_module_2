@@ -14,13 +14,15 @@ public class EmployeeServiceImpl implements IEmployeeService {
     WriteAndReadFileEmployee w = new WriteAndReadFileEmployee();
 
     @Override
-    public void addNew() {
+    public void addNew() throws IOException {
+        List<Employee> employeeList = w.readerEmployee();
         try {
-            w.writeEmployee();
+            w.writeEmployee(employeeList);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
 
     @Override
     public void newedit(Employee employee) {
@@ -45,7 +47,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
             }
         }
         try {
-            w.writeEmployee();
+            w.writeEmployee(employeeList);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -72,7 +74,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
             employeeList.remove(deleteEmployee);
 
             try {
-                w.writeEmployee();
+                w.writeEmployee(employeeList);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -82,7 +84,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public void displayAll() {
         try {
-            w.readerEmployee();
+          List<Employee> list =  w.readerEmployee();
+           for (Employee e : list) {
+               System.out.println(e.toStringDisplay());
+           }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

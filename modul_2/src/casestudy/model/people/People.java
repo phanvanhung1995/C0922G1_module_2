@@ -68,8 +68,7 @@ public abstract class People {
     @Override
     public String toString() {
         return
-                name + "," +
-                        dateOfBirth + "," +
+                name + "," + dateOfBirth + "," +
                         gender + "," +
                         id + "," +
                         phoneNumber + "," +
@@ -85,7 +84,7 @@ public abstract class People {
                 ", gender='" + gender + '\'' +
                 ", id='" + id + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\''
+                ;
     }
 }

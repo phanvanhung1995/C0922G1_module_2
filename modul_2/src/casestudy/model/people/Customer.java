@@ -52,4 +52,13 @@ public class Customer extends People{
                 rankCustomer + "," +
                  address;
     }
+
+
+    public String toStringDisplay() {
+        return super.toStringDisplay() +
+                "idCustomer='" + idCustomer + '\'' +
+                ", rankCustomer='" + rankCustomer + '\'' +
+                ", address='" + address + '\'' +
+                "} ";
+    }
 }
